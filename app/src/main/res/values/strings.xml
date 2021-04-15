@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FaceVoiceApp</string>
+    <string name="auth">Authenticate</string>
+    <string name="nxt">Next</string>
+    <string name="log">Login</string>
+    <string name="reg">Register</string>
+    <string name="hello">Hello!</string>
+    <string name="cont">Continue</string>
 </resources>
