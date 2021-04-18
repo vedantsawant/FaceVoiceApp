@@ -7,4 +7,43 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/prompt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt_auth"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="640sp"
+        >
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:keepScreenOn="true"
+        app:cameraEngine="camera1"
+        app:cameraPreview="glSurface"
+        app:cameraPreviewFrameRate="30"
+        app:cameraFacing="front"
+        app:cameraFlash="off"
+        app:cameraAudio="on"
+        app:cameraSnapshotMaxWidth="500"
+        app:cameraSnapshotMaxHeight="500"
+        app:cameraVideoCodec="deviceDefault"
+        app:cameraVideoMaxDuration="10000"
+        app:cameraVideoMaxSize="2000000"
+        app:cameraVideoSizeAspectRatio="1:1"/>
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/authenticate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auth"
+        android:layout_gravity="center"/>
+
 </LinearLayout>

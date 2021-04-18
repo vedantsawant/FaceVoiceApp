@@ -6,4 +6,5 @@
     <string name="reg">Register</string>
     <string name="hello">Hello!</string>
     <string name="cont">Continue</string>
+    <string name="prompt_auth">Please face the camera and press the button to start Authentication</string>
 </resources>
