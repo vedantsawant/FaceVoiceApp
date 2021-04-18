@@ -12,6 +12,8 @@ import com.otaliastudios.cameraview.PictureResult;
 import com.otaliastudios.cameraview.VideoResult;
 import com.otaliastudios.cameraview.controls.Mode;
 
+import java.io.File;
+
 public class LoginActivity extends AppCompatActivity {
     AppCompatButton auth_btn;
     CameraView cameraView;
@@ -37,8 +39,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // do something
                 // Select output file. Make sure you have write permissions.
+                File file = new File(getExternalFilesDir(null),"video_file_name");
                 cameraView.setMode(Mode.VIDEO);
-                //cameraView.takeVideoSnapshot(file,5000000);
+                cameraView.takeVideoSnapshot(file,5000000);
 
                 // Later... stop recording. This will trigger onVideoTaken().
                 //cameraView.stopVideo();
