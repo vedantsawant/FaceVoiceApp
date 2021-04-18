@@ -15,14 +15,10 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="640sp"
-        >
     <com.otaliastudios.cameraview.CameraView
         android:id="@+id/camera"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="500sp"
         android:layout_margin="10sp"
         android:keepScreenOn="true"
         app:cameraEngine="camera1"
@@ -37,13 +33,14 @@
         app:cameraVideoMaxDuration="10000"
         app:cameraVideoMaxSize="2000000"
         app:cameraVideoSizeAspectRatio="1:1"/>
-    </FrameLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/authenticate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/auth"
+            android:layout_gravity="bottom"
+            />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/authenticate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/auth"
-        android:layout_gravity="center"/>
+
 
 </LinearLayout>
