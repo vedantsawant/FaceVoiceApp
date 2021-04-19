@@ -1,31 +1,31 @@
 package com.example.facevoiceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.otaliastudios.cameraview.CameraListener;
 import com.otaliastudios.cameraview.CameraView;
-import com.otaliastudios.cameraview.PictureResult;
 import com.otaliastudios.cameraview.VideoResult;
 import com.otaliastudios.cameraview.controls.Mode;
 
 import java.io.File;
 
-public class LoginActivity extends AppCompatActivity {
-    Button auth_btn;
+public class RegisterCam extends AppCompatActivity {
+    Button nxt_btn,detect_btn;
     CameraView cameraView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        auth_btn = findViewById(R.id.authenticate);
+        setContentView(R.layout.activity_register_cam);
+        nxt_btn = findViewById(R.id.reg_btn);
+        detect_btn = findViewById(R.id.detect_btn);
         cameraView = findViewById(R.id.camera);
         cameraView.setLifecycleOwner(this);
 
@@ -37,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        auth_btn.setOnClickListener(new View.OnClickListener(){
+        nxt_btn.setVisibility(View.GONE);
+
+        detect_btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // do something
@@ -55,13 +57,23 @@ public class LoginActivity extends AppCompatActivity {
                 // Later... stop recording. This will trigger onVideoTaken().
                 //cameraView.stopVideo();
 
-                Intent intent = new Intent(getApplicationContext(), ResultScreen.class);
+                Toast toast = Toast.makeText(getApplicationContext(), "Face Registration Complete", Toast.LENGTH_SHORT);
+                toast.show();
+
+                nxt_btn.setVisibility(View.VISIBLE);
+            }
+        });
+
+        nxt_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), RegisterVoice.class);
                 //intent.putExtra("USER_ID", sessionId);
                 startActivity(intent);
             }
         });
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -79,5 +91,4 @@ public class LoginActivity extends AppCompatActivity {
         super.onDestroy();
         cameraView.destroy();
     }
-
 }

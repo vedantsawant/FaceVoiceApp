@@ -7,4 +7,16 @@
     <string name="hello">Hello!</string>
     <string name="cont">Continue</string>
     <string name="prompt_auth">Please face the camera and press the button to start Authentication</string>
+    <string name="prompt_reg">Please face the camera and press the Detect button to begin face registration</string>
+    <string name="existing_user">Existing user?</string>
+    <string name="welcome">WELCOME</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="name">Name :</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="age">Age :</string>
+    <string name="detect">Detect</string>
+    <string name="finish">Finish</string>
+    <string name="record">Record</string>
+    <string name="prompt_record_voice">Hold the Record button and read the number displayed</string>
+    <string name="progress">PROGRESS</string>
 </resources>
