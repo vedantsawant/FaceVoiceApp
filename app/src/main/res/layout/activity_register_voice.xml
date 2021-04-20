@@ -33,7 +33,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/number"
+        android:id="@+id/num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -44,7 +44,7 @@
         android:textSize="50sp" />
 
     <ProgressBar
-        android:id="@+id/progress_bar"
+        android:id="@+id/compl_bar"
         style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

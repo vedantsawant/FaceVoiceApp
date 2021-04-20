@@ -28,13 +28,11 @@ public class RegisterVoice extends AppCompatActivity {
 
         rec_btn = findViewById(R.id.rec_btn);
         fin_btn = findViewById(R.id.fin_btn);
-        progress_bar = findViewById(R.id.progress_bar);
-        number = findViewById(R.id.number);
+        progress_bar = findViewById(R.id.compl_bar);
+        number = findViewById(R.id.num);
 
         //hide finish btn initially
         fin_btn.setVisibility(View.GONE);
-
-
 
         rec_btn.setOnLongClickListener(new View.OnLongClickListener() {
             int cnt = 0;
@@ -44,7 +42,8 @@ public class RegisterVoice extends AppCompatActivity {
                 //record Audio
 
                 //number changing
-                number.setText(cnt);
+                String st =String.valueOf(cnt);
+                number.setText(st);
                 cnt+= 1;
                 progress_bar.incrementProgressBy(10);
 

@@ -15,15 +15,16 @@
         android:gravity="center"
         android:text="USER INFO"
         android:textSize="50sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="100sp"
+        android:paddingHorizontal="10sp"
         android:text="@string/name"
         android:textSize="20sp"
-        android:textAppearance="Bold"
-        android:layout_marginHorizontal="20sp"
-        android:paddingHorizontal="10sp"
-        android:layout_marginTop="100sp"/>
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
@@ -38,10 +39,11 @@
         android:layout_height="wrap_content"
         android:text="@string/age"
         android:textSize="20sp"
-        android:textAppearance="Bold"
+        android:textStyle="bold"
         android:layout_marginHorizontal="20sp"
         android:paddingHorizontal="10sp"
-        android:layout_marginTop="10sp"/>
+        android:layout_marginTop="10sp"
+        android:inputType="text"/>
     <EditText
         android:id="@+id/age"
         android:layout_width="match_parent"
@@ -50,7 +52,8 @@
         android:textSize="20sp"
         android:paddingHorizontal="10sp"
         android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="5sp"/>
+        android:layout_marginTop="5sp"
+        android:inputType="number"/>
     <Button
         android:id="@+id/cont_btn"
         android:layout_width="match_parent"

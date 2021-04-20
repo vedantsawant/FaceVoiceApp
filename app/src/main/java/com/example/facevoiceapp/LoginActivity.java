@@ -46,11 +46,11 @@ public class LoginActivity extends AppCompatActivity {
                 cameraView.setMode(Mode.VIDEO);
                 cameraView.takeVideoSnapshot(file,5000000);
                 Log.i("Camera","Video Captured"+ file);
-                try {
-                    wait(5000000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    wait(5000000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
 
                 // Later... stop recording. This will trigger onVideoTaken().
                 //cameraView.stopVideo();

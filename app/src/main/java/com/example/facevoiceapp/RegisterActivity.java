@@ -20,14 +20,15 @@ public class RegisterActivity extends AppCompatActivity {
         cont_btn = findViewById(R.id.cont_btn);
         name = findViewById(R.id.name);
         age = findViewById(R.id.age);
-        Editable user_name = name.getText();
-        Editable user_age = age.getText();
+
         cont_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RegisterCam.class);
-                intent.putExtra("Name", user_name);
-                intent.putExtra("Age", user_age);
+                String user_name = name.getText().toString();
+                int user_age = Integer.parseInt(age.getText().toString());
+                intent.putExtra("USER_NAME", user_name);
+                intent.putExtra("USER_AGE", user_age);
                 startActivity(intent);
             }
         });

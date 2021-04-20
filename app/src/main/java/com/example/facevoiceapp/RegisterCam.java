@@ -24,20 +24,26 @@ public class RegisterCam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_cam);
-        nxt_btn = findViewById(R.id.reg_btn);
+        Log.d("CAM","Activity started");
+        nxt_btn = findViewById(R.id.nxt_btn);
         detect_btn = findViewById(R.id.detect_btn);
         cameraView = findViewById(R.id.camera);
         cameraView.setLifecycleOwner(this);
+
+        Intent intent = getIntent();
+        String user_name = intent.getStringExtra("USER_NAME");
+        Integer user_id = intent.getIntExtra("USER_AGE",-1);
+
+        //nxt_btn.setVisibility(View.GONE);
 
         cameraView.addCameraListener(new CameraListener() {
             @Override
             public void onVideoTaken(VideoResult result) {
                 // A Video was taken!
+
             }
 
         });
-
-        nxt_btn.setVisibility(View.GONE);
 
         detect_btn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,11 +54,11 @@ public class RegisterCam extends AppCompatActivity {
                 cameraView.setMode(Mode.VIDEO);
                 cameraView.takeVideoSnapshot(file,5000000);
                 Log.i("Camera","Video Captured"+ file);
-                try {
-                    wait(5000000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    wait(5000000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
 
                 // Later... stop recording. This will trigger onVideoTaken().
                 //cameraView.stopVideo();
@@ -60,7 +66,7 @@ public class RegisterCam extends AppCompatActivity {
                 Toast toast = Toast.makeText(getApplicationContext(), "Face Registration Complete", Toast.LENGTH_SHORT);
                 toast.show();
 
-                nxt_btn.setVisibility(View.VISIBLE);
+                //nxt_btn.setVisibility(View.VISIBLE);
             }
         });
 
