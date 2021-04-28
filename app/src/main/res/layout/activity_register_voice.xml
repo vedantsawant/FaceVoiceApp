@@ -56,15 +56,32 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/progress"/>
-
-    <Button
-        android:id="@+id/rec_btn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginHorizontal="40sp"
+        android:orientation="horizontal"
         android:layout_marginTop="50sp"
-        android:text="@string/record" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        >
+        <Button
+            android:id="@+id/rec_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20sp"
+            android:paddingHorizontal="20sp"
+            android:text="@string/record" />
+        <Button
+            android:id="@+id/stop_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20sp"
+            android:paddingHorizontal="20sp"
+            android:text="Stop" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/fin_btn"

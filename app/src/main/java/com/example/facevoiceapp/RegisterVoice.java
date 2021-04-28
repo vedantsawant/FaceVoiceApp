@@ -15,7 +15,7 @@ import com.cleveroad.audiovisualization.GLAudioVisualizationView;
 
 public class RegisterVoice extends AppCompatActivity {
     //private AudioVisualization audioVisualization;
-    Button rec_btn,fin_btn;
+    Button rec_btn,fin_btn,stop_btn;
     ProgressBar progress_bar;
     TextView number;
 
@@ -27,6 +27,7 @@ public class RegisterVoice extends AppCompatActivity {
         //audioVisualization = (AudioVisualization) GLAudioVisualizationView;
 
         rec_btn = findViewById(R.id.rec_btn);
+        stop_btn = findViewById(R.id.stop_btn);
         fin_btn = findViewById(R.id.fin_btn);
         progress_bar = findViewById(R.id.compl_bar);
         number = findViewById(R.id.num);
@@ -34,12 +35,20 @@ public class RegisterVoice extends AppCompatActivity {
         //hide finish btn initially
         fin_btn.setVisibility(View.GONE);
 
-        rec_btn.setOnLongClickListener(new View.OnLongClickListener() {
+        rec_btn.setOnClickListener(new View.OnClickListener() {
             int cnt = 0;
             @Override
-            public boolean onLongClick(View v) {
+            public void onClick(View v) {
+                //start record Audio
 
-                //record Audio
+            }
+        });
+
+        stop_btn.setOnClickListener(new View.OnClickListener() {
+            int cnt = 0;
+            @Override
+            public void onClick(View v) {
+                //stop record Audio
 
                 //number changing
                 String st =String.valueOf(cnt);
@@ -51,7 +60,6 @@ public class RegisterVoice extends AppCompatActivity {
                     rec_btn.setVisibility(View.GONE);
                     fin_btn.setVisibility(View.VISIBLE);
                 }
-                return true;
             }
         });
 
