@@ -116,7 +116,7 @@ public class RegisterVoice extends AppCompatActivity {
                 cnt+= 1;
                 progress_bar.incrementProgressBy(10);
 
-                if(cnt == 10){
+                if(cnt == 9){
                     rec_btn.setVisibility(View.GONE);
                     fin_btn.setVisibility(View.VISIBLE);
                 }
@@ -133,6 +133,7 @@ public class RegisterVoice extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 //intent.putExtra("USER_ID", sessionId);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -162,7 +163,7 @@ public class RegisterVoice extends AppCompatActivity {
                     }
                 }), file(num));
 
-        Log.d("[INFO]","Recorded audio".concat(String.valueOf(num))+ file(num));
+        Log.d("[INFO]","Setup recorder".concat(String.valueOf(num))+ file(num));
     }
 
 //    private void setupNoiseRecorder() {
