@@ -24,7 +24,7 @@
         android:layout_marginTop="25sp"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center"
-        android:text="USER_NAME"
+        android:text="USER"
         android:textSize="40sp" />
 
     <ProgressBar
@@ -34,14 +34,22 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:outlineAmbientShadowColor="@color/blue_3"
-        android:layout_marginTop="50sp" />
+        android:layout_marginTop="50sp"
+        android:progress="0"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/stop"
+        android:visibility="gone"/>
+
     <TextView
         android:id="@+id/match_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"
-        android:text="xx % Match"
+        android:text="00 % Match"
         android:textSize="30sp"
         />
     <Button

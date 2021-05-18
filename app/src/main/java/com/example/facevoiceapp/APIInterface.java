@@ -29,7 +29,7 @@ public interface APIInterface {
 
     //Face registration
     @Multipart
-    @POST("voice_url_here")
+    @POST("face_url_here")
     Call<ResponseBody> uploadFace(
             @Part("id") RequestBody id,
             @Part("name") RequestBody name,

@@ -34,7 +34,7 @@ public class RegisterCam extends AppCompatActivity {
         String user_name = intent.getStringExtra("USER_NAME");
         Integer user_id = intent.getIntExtra("USER_AGE",-1);
 
-        //nxt_btn.setVisibility(View.GONE);
+        nxt_btn.setVisibility(View.GONE);
 
         cameraView.addCameraListener(new CameraListener() {
             @Override
@@ -50,10 +50,11 @@ public class RegisterCam extends AppCompatActivity {
             public void onClick(View v) {
                 // do something
                 // Select output file. Make sure you have write permissions.
-                File file = new File(getExternalFilesDir(null),"video_file_name.mp4");
+                File file = new File(getExternalFilesDir(null),"face_reg.mp4");
                 cameraView.setMode(Mode.VIDEO);
-                cameraView.takeVideoSnapshot(file,5000000);
+                cameraView.takeVideo(file,5000000);
                 Log.i("Camera","Video Captured"+ file);
+
 //                try {
 //                    wait(5000000);
 //                } catch (InterruptedException e) {
@@ -66,7 +67,8 @@ public class RegisterCam extends AppCompatActivity {
                 Toast toast = Toast.makeText(getApplicationContext(), "Face Registration Complete", Toast.LENGTH_SHORT);
                 toast.show();
 
-                //nxt_btn.setVisibility(View.VISIBLE);
+                nxt_btn.setVisibility(View.VISIBLE);
+                detect_btn.setVisibility(View.GONE);
             }
         });
 

@@ -5,9 +5,11 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Adapter to implement API
 public class APIClient {
+
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "https://jsonplaceholder.typicode.com";
+    private static final String BASE_URL = "http://localhost:8000/authapi";
 
     static Retrofit getClient() {
 

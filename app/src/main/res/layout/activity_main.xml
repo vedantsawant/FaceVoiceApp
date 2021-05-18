@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="200sp"
         android:layout_marginTop="25sp"
-        app:srcCompat="@drawable/launch_01_min"
+        app:srcCompat="@drawable/biometric"
         />
 
     <TextView
