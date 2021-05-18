@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
                 intent.putExtra("USER_NAME", user_name);
                 intent.putExtra("USER_AGE", user_age);
                 startActivity(intent);
+                finish();
             }
         });
     }

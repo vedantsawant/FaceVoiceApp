@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 //intent.putExtra("USER_ID", sessionId);
                 startActivity(intent);
+                finish();
+
             }
         });
     }

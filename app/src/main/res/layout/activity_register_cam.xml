@@ -8,6 +8,7 @@
     tools:context=".RegisterCam">
     <com.otaliastudios.cameraview.CameraView
         android:id="@+id/camera"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="500sp"
         android:layout_margin="10sp"
@@ -21,8 +22,6 @@
         app:cameraSnapshotMaxWidth="500"
         app:cameraSnapshotMaxHeight="500"
         app:cameraVideoCodec="deviceDefault"
-        app:cameraVideoMaxDuration="10000"
-        app:cameraVideoMaxSize="2000000"
         app:cameraVideoSizeAspectRatio="1:1"
         />
 
