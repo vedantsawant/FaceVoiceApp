@@ -16,6 +16,7 @@ public interface APIInterface {
     Call<ResponseBody> uploadVoice(
             @Part("id") RequestBody id,
             @Part("name") RequestBody name,
+            @Part MultipartBody.Part file0,
             @Part MultipartBody.Part file1,
             @Part MultipartBody.Part file2,
             @Part MultipartBody.Part file3,
@@ -24,16 +25,14 @@ public interface APIInterface {
             @Part MultipartBody.Part file6,
             @Part MultipartBody.Part file7,
             @Part MultipartBody.Part file8,
-            @Part MultipartBody.Part file9,
-            @Part MultipartBody.Part file10);
+            @Part MultipartBody.Part file9);
 
     //Face registration
     @Multipart
-    @POST("face_url_here")
+    @POST("regface")
     Call<ResponseBody> uploadFace(
-            @Part("id") RequestBody id,
-            @Part("name") RequestBody name,
-            @Part MultipartBody.Part file);
+            @Part MultipartBody.Part file,
+            @Part("name") RequestBody name);
 
     //Login
     @Multipart

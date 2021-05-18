@@ -28,7 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String user_name = name.getText().toString();
                 int user_age = Integer.parseInt(age.getText().toString());
                 intent.putExtra("USER_NAME", user_name);
-                intent.putExtra("USER_AGE", user_age);
                 startActivity(intent);
                 finish();
             }
