@@ -1,3 +1,4 @@
+
 package com.example.facevoiceapp;
 
 import androidx.annotation.Nullable;
@@ -122,7 +123,7 @@ public class RegisterCam extends AppCompatActivity {
                 toast.show();
 
                 Intent intent = new Intent(getApplicationContext(), RegisterVoice.class);
-                //intent.putExtra("USER_ID", sessionId);
+                intent.putExtra("USER_NAME", user_name);
                 startActivity(intent);
                 finish();
             }
@@ -161,7 +162,7 @@ public class RegisterCam extends AppCompatActivity {
         // create upload service client
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
-        // use the FileUtils to get the actual file by uri
+        // to get the actual file
         File file = new File(getExternalFilesDir(null), "face_reg.mp4");
         Log.d("Debug", "uploadFile: LOC "+file);
 

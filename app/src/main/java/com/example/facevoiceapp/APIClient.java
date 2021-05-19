@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class APIClient {
 
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "http://192.168.0.3:8000/authapi/";
+    private static final String BASE_URL = "http://192.168.0.107:8000/authapi/";
 
     static Retrofit getClient() {
 
