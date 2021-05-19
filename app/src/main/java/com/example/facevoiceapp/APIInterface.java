@@ -12,11 +12,9 @@ public interface APIInterface {
 
     //Voice registration
     @Multipart
-    @POST("voice_url_here")
+    @POST("regvoice")
     Call<ResponseBody> uploadVoice(
-            @Part("id") RequestBody id,
-            @Part("name") RequestBody name,
-            @Part MultipartBody.Part file0,
+
             @Part MultipartBody.Part file1,
             @Part MultipartBody.Part file2,
             @Part MultipartBody.Part file3,
@@ -25,7 +23,11 @@ public interface APIInterface {
             @Part MultipartBody.Part file6,
             @Part MultipartBody.Part file7,
             @Part MultipartBody.Part file8,
-            @Part MultipartBody.Part file9);
+            @Part MultipartBody.Part file9,
+            @Part MultipartBody.Part file0,
+            @Part("name") RequestBody name
+
+    );
 
     //Face registration
     @Multipart
@@ -38,7 +40,6 @@ public interface APIInterface {
     @Multipart
     @POST("voice_url_here")
     Call<ResponseBody> uploadLogin(
-            @Part MultipartBody.Part face_vid,
-            @Part MultipartBody.Part voice_aud);
+            @Part MultipartBody.Part face_vid);
 
 }
