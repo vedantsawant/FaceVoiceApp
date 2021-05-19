@@ -6,8 +6,8 @@
     <string name="reg">Register</string>
     <string name="hello">Hello!</string>
     <string name="cont">Continue</string>
-    <string name="prompt_auth">Please face the camera and press the button to start Authentication</string>
-    <string name="prompt_reg">Please face the camera and press the Detect button to begin face registration</string>
+    <string name="prompt_auth">Please face the camera and speak the OTP</string>
+    <string name="prompt_reg">Please face the camera and press the DETECT button to begin face registration</string>
     <string name="existing_user">Existing user?</string>
     <string name="welcome">WELCOME</string>
     <string name="enter_username">Enter Username</string>
@@ -20,4 +20,6 @@
     <string name="prompt_record_voice">Hold the Record button and read the number displayed</string>
     <string name="progress">PROGRESS</string>
     <string name="upload">UPLOAD</string>
+    <string name="otp">OTP</string>
+    <string name="results">RESULTS</string>
 </resources>

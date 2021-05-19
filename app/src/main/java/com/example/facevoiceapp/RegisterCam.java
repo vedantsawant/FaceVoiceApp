@@ -69,7 +69,7 @@ public class RegisterCam extends AppCompatActivity {
         detect_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // do something
+
                 // Make sure you have write permissions.
 //                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
 //                        != PackageManager.PERMISSION_GRANTED) {
@@ -79,25 +79,19 @@ public class RegisterCam extends AppCompatActivity {
 //                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
 //                            MY_PERMISSION_REQUEST_ID);
 //
-//                } else {
+//                }
 
                 // already granted, start Recorder
                 cameraView.setMode(Mode.VIDEO);
                 File file = new File(getExternalFilesDir(null), "face_reg.mp4");
                 cameraView.takeVideo(file, 5000000);
 
-//                    try {
-
-//                        wait(5000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
                 // Later... stop recording. This will trigger onVideoTaken().
                 if (cameraView.isTakingVideo()) {
                     cameraView.stopVideo();
                 }
 
-                Log.i("Camera", "Video Captured" + file);
+                Log.i("Camera", "Video Capturing" + file);
 
                 detect_btn.setVisibility(View.GONE);
 
@@ -105,10 +99,6 @@ public class RegisterCam extends AppCompatActivity {
                 toast.show();
 
                 nxt_btn.setVisibility(View.VISIBLE);
-
-
-//                }
-
 
             }
         });

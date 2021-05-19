@@ -12,39 +12,80 @@
         android:layout_width="wrap_content"
         android:layout_height="500sp"
         android:layout_margin="10sp"
+        android:layout_gravity="center_horizontal"
         android:keepScreenOn="true"
+        app:cameraAudio="on"
         app:cameraEngine="camera1"
-        app:cameraPreview="glSurface"
-        app:cameraPreviewFrameRate="30"
         app:cameraFacing="front"
         app:cameraFlash="off"
-        app:cameraAudio="on"
-        app:cameraSnapshotMaxWidth="500"
-        app:cameraSnapshotMaxHeight="500"
+        app:cameraPreview="glSurface"
+        app:cameraPreviewFrameRate="30"
+        app:cameraSnapshotMaxHeight="400"
+        app:cameraSnapshotMaxWidth="400"
         app:cameraVideoCodec="deviceDefault"
         app:cameraVideoMaxDuration="10000"
         app:cameraVideoMaxSize="2000000"
-        app:cameraVideoSizeAspectRatio="1:1"
+        app:cameraVideoSizeAspectRatio="1:1">
+
+        <TextView
+            android:id="@+id/otp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginHorizontal="10sp"
+            android:layout_marginBottom="10sp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/otp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </com.otaliastudios.cameraview.CameraView>
+
+    <ProgressBar
+        android:id="@+id/loading_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
         />
 
     <TextView
         android:id="@+id/prompt_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/prompt_auth"
         android:layout_gravity="center"
-        android:textAlignment="center"
-        android:layout_margin="10sp"
-        />
+        android:layout_marginHorizontal="10sp"
+        android:layout_marginTop="5sp"
+        android:text="@string/prompt_auth"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/authenticate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/auth"
         android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="40sp"
         android:layout_marginTop="10sp"
-        />
+        android:text="@string/auth" />
+
+    <Button
+        android:id="@+id/upload_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="40sp"
+        android:layout_marginTop="10sp"
+        android:text="@string/upload"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/result_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="40sp"
+        android:layout_marginTop="10sp"
+        android:text="@string/results"
+        android:visibility="gone" />
 
 </LinearLayout>

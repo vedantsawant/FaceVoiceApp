@@ -38,8 +38,10 @@ public interface APIInterface {
 
     //Login
     @Multipart
-    @POST("voice_url_here")
+    @POST("logface")
     Call<ResponseBody> uploadLogin(
-            @Part MultipartBody.Part face_vid);
+            @Part MultipartBody.Part face_vid,
+            @Part("otp") RequestBody otp
+    );
 
 }
