@@ -12,17 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100sp"
-        android:fontFamily="sans-serif-condensed-light"
+        android:fontFamily="@font/ubuntu"
         android:gravity="center"
         android:text="@string/welcome"
         android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/user_name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25sp"
-        android:fontFamily="sans-serif-condensed-light"
+        android:fontFamily="@font/ubuntu_medium"
         android:gravity="center"
         android:text="USER"
         android:textSize="40sp" />
@@ -33,7 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:outlineAmbientShadowColor="@color/blue_3"
+        android:progressTint="@color/blue_3"
+        android:progressBackgroundTint="@color/blue_3"
         android:layout_marginTop="50sp"
         android:progress="0"/>
 
@@ -48,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/ubuntu_medium"
         android:layout_marginTop="20sp"
         android:text="00 % Match"
         android:textSize="30sp"
@@ -59,7 +62,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20sp"
         android:layout_marginHorizontal="30sp"
-        android:text="TRY AGAIN"
+        android:text="@string/try_again"
         />
 
 </LinearLayout>

@@ -7,29 +7,40 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:srcCompat="@drawable/logo_main"
+        android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50sp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:text="@string/welcome"
-        android:textSize="50sp" />
+        />
 
     <ImageView
         android:id="@+id/image_main"
         android:layout_width="match_parent"
-        android:layout_height="200sp"
+        android:layout_height="225sp"
         android:layout_marginTop="25sp"
-        app:srcCompat="@drawable/biometric"
-        />
+        app:srcCompat="@drawable/biometric" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15sp"
+        android:layout_marginHorizontal="20sp"
+        android:fontFamily="@font/ubuntu"
+        android:gravity="center"
+        android:text="BIometric is a bi-modal biometrics authentication system"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40sp"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="40sp"
         android:text="@string/existing_user"
         android:textStyle="bold"
         />
@@ -47,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40sp"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="15sp"
         android:text="New User?"
         android:textStyle="bold"
         />

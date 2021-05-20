@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.facevoiceapp.pojo.Loginres;
+import com.google.gson.Gson;
 import com.otaliastudios.cameraview.CameraListener;
 import com.otaliastudios.cameraview.CameraView;
 import com.otaliastudios.cameraview.PictureResult;
@@ -37,6 +38,10 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar loading_bar;
     APIInterface apiInterface;
     int AUTH_STATUS;
+    String RESULT_NAME_FACE;
+    String RESULT_NAME_VOICE;
+    String RESULT_CONF_FACE;
+    String RESULT_CONF_VOICE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,15 +82,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                prompt_text.setText("Recording");
                 // Select output file
                 cameraView.setMode(Mode.VIDEO);
                 File file = new File(getExternalFilesDir(null),"login.mp4");
                 cameraView.takeVideo(file,5000000);
 
                 // Later... stop recording. This will trigger onVideoTaken().
-                if (cameraView.isTakingVideo()) {
-                    cameraView.stopVideo();
-                }
+//                if (cameraView.isTakingVideo()) {
+//                    cameraView.stopVideo();
+//                }
 
                 Log.i("Camera","Video Capturing"+ file);
                 auth_btn.setVisibility(View.GONE);
@@ -121,8 +127,8 @@ public class LoginActivity extends AppCompatActivity {
                 if(AUTH_STATUS == -1){
                     Toast toast2 = Toast.makeText(getApplicationContext(), "Login Failed Try Again", Toast.LENGTH_SHORT);
                     toast2.show();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                    Intent intentfail = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intentfail);
                 }
 
             }
@@ -131,12 +137,17 @@ public class LoginActivity extends AppCompatActivity {
         result_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(RESULT_NAME_FACE.equals(RESULT_NAME_VOICE)){
+                    //Send to result screen
+                    Intent intent = new Intent(getApplicationContext(), ResultScreen.class);
+                    intent.putExtra("USER_NAME", RESULT_NAME_FACE);
+                    intent.putExtra("USER_CONF_FACE", RESULT_CONF_FACE);
+                    intent.putExtra("USER_CONF_VOICE", RESULT_CONF_VOICE);
+                    startActivity(intent);
 
-                //Send to result screen
-                Intent intent = new Intent(getApplicationContext(), ResultScreen.class);
-                //intent.putExtra("USER_NAME", u_name);
-                //intent.putExtra("USER_CONF", u_conf);
-                startActivity(intent);
+                }
+
+
 
             }
         });
@@ -175,7 +186,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call,
                                    Response<ResponseBody> response) {
-                //Loginres loginres = response.body();
+                String responseString = response.body().toString();
+                Gson gson = new Gson();
+                Loginres loginres = gson.fromJson(String.valueOf(response.body()),Loginres.class);
+                RESULT_NAME_FACE = loginres.getFace().getName();
+                RESULT_CONF_FACE = loginres.getFace().getConf();
+                RESULT_NAME_VOICE = loginres.getVoice().getName();
+                RESULT_CONF_VOICE = loginres.getVoice().getConf();
+
                 Toast toast = Toast.makeText(getApplicationContext(), "Uploaded on server", Toast.LENGTH_SHORT);
                 toast.show();
                 Log.v("Upload", "success");

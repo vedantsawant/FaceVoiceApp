@@ -87,9 +87,9 @@ public class RegisterCam extends AppCompatActivity {
                 cameraView.takeVideo(file, 5000000);
 
                 // Later... stop recording. This will trigger onVideoTaken().
-                if (cameraView.isTakingVideo()) {
-                    cameraView.stopVideo();
-                }
+//                if (cameraView.isTakingVideo()) {
+//                    cameraView.stopVideo();
+//                }
 
                 Log.i("Camera", "Video Capturing" + file);
 
