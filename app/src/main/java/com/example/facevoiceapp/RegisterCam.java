@@ -89,6 +89,7 @@ public class RegisterCam extends AppCompatActivity {
                 // Later... stop recording. This will trigger onVideoTaken().
 //                if (cameraView.isTakingVideo()) {
 //                    cameraView.stopVideo();
+//                    Log.d("Debug", "onClick: Video recording stopped");
 //                }
 
                 Log.i("Camera", "Video Capturing" + file);
@@ -107,6 +108,7 @@ public class RegisterCam extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cameraView.stopVideo();
+                Log.d("Debug", "onClick: Video stopped");
                 Log.d("Debug","POSTING on API");
                 uploadFile(user_name);
                 Toast toast = Toast.makeText(getApplicationContext(), "Face Recording Completed", Toast.LENGTH_SHORT);
@@ -190,8 +192,8 @@ public class RegisterCam extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                Toast toast = Toast.makeText(getApplicationContext(), "Failed to upload on server", Toast.LENGTH_SHORT);
-                toast.show();
+//                Toast toast = Toast.makeText(getApplicationContext(), "Failed to upload on server", Toast.LENGTH_SHORT);
+//                toast.show();
                 Log.e("Upload error:", t.getMessage());
             }
         });

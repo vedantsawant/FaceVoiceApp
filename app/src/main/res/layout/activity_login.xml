@@ -23,6 +23,7 @@
         app:cameraSnapshotMaxHeight="400"
         app:cameraSnapshotMaxWidth="400"
         app:cameraVideoCodec="deviceDefault"
+        app:cameraVideoMaxSize="9000000"
         app:cameraVideoSizeAspectRatio="1:1">
 
         <TextView

@@ -31,7 +31,11 @@ public class ResultScreen extends AppCompatActivity {
 
         user_name_txt.setText(user_name);
         //Weighted sum of confidence
-        //match_txt.setText(user_conf_voice);
+        double d1 =Double.parseDouble(user_conf_face);
+        double d2 =Double.parseDouble(user_conf_voice);
+        double avg = ((100-d1)+(100*d2))/2;
+        String result = String.format("%.2f", avg);
+        match_txt.setText(result);
 
 
         //match details
@@ -41,7 +45,7 @@ public class ResultScreen extends AppCompatActivity {
         //set progress
         match_bar.setProgress(mth);
 
-        match_txt.setText("70 % Match");
+        //match_txt.setText("70 % Match");
 
         //return to home
         try_btn.setOnClickListener(new View.OnClickListener() {

@@ -22,6 +22,7 @@
         app:cameraSnapshotMaxWidth="500"
         app:cameraSnapshotMaxHeight="500"
         app:cameraVideoCodec="deviceDefault"
+        app:cameraVideoMaxSize="9000000"
         app:cameraVideoSizeAspectRatio="1:1"
         />
 
